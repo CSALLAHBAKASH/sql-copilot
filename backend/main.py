@@ -21,6 +21,9 @@ def on_startup():
 class AskRequest(BaseModel):
     question: str
 
+@app.get("/")
+def home():
+    return {"app": "sql-copilot"}
 
 @app.post("/api/ask")
 def ask(payload: AskRequest):
